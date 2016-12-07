@@ -13,7 +13,9 @@ interface DataConnection {
     fun close()
 }
 
-fun build(ip: String, port: Int, isServer: Boolean): DataConnection = when(isServer) {
+fun build(ip: String, port: Int, isServer: Boolean): DataConnection = when (isServer) {
     true -> P2PHost(ip, port)
     false -> P2PClient(ip, port)
 }
+
+fun buildMQConnection(ip: String, port: Int, isServer: Boolean): DataConnection = MQClient(ip, port, isServer)

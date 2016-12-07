@@ -21,6 +21,8 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'no.tornado:tornadofx:1.5.8'
+
+    compile group: 'com.rabbitmq', name: 'amqp-client', version: '4.0.0'
 }
 
 jar {
